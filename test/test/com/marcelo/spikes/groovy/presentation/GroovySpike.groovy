@@ -67,7 +67,7 @@ class GroovySpike {
 
 	@Test
 	public void shouldReturnDBRecords() {
-		def db = [url:'jdbc:sqlserver://gts10:1433;databaseName=intranet', user:'dbuser', password:'bloody', driver:'com.microsoft.sqlserver.jdbc.SQLServerDriver']
+		def db = [url:'jdbc:sqlserver://gts11:1433;databaseName=intranet', user:'dbread', password:'bloody', driver:'com.microsoft.sqlserver.jdbc.SQLServerDriver']
 		def sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
 		sql.eachRow('select * from tbltrades', 2, 2) { row -> 
 			println "${row.symbol.padRight(10)} ($row.tradedate)" 
